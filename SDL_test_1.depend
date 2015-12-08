@@ -1,0 +1,140 @@
+# depslib dependency file v1.0
+1448641207 source:/home/nikita/Documents/SDL_test_1/CApp.cpp
+	"CApp.h"
+
+1448639901 /home/nikita/Documents/SDL_test_1/CApp.h
+	<ctime>
+	<unistd.h>
+	<iostream>
+	<SDL2/SDL.h>
+	"CEvent.h"
+	"CSurface.h"
+	"CCharacters.h"
+
+1448635327 /home/nikita/Documents/SDL_test_1/CEvent.h
+	<SDL2/SDL.h>
+
+1448628441 /home/nikita/Documents/SDL_test_1/CSurface.h
+	<SDL2/SDL.h>
+
+1448640126 source:/home/nikita/Documents/SDL_test_1/CApp_OnCleanup.cpp
+	"CApp.h"
+
+1448638169 source:/home/nikita/Documents/SDL_test_1/CApp_OnEvent.cpp
+	"CApp.h"
+
+1448635474 source:/home/nikita/Documents/SDL_test_1/CApp_OnLoop.cpp
+	"CApp.h"
+
+1448640189 source:/home/nikita/Documents/SDL_test_1/CApp_OnInit.cpp
+	"CApp.h"
+
+1448640358 source:/home/nikita/Documents/SDL_test_1/CApp_OnRender.cpp
+	"CApp.h"
+
+1448635558 source:/home/nikita/Documents/SDL_test_1/CEvent.cpp
+	"CEvent.h"
+
+1448628229 source:/home/nikita/Documents/SDL_test_1/CSurface.cpp
+	"CSurface.h"
+
+1448641018 source:/home/nikita/Documents/SDL_test_1/CCharacters.cpp
+	"CCharacters.h"
+
+1448640617 /home/nikita/Documents/SDL_test_1/CCharacters.h
+	<SDL2/SDL.h>
+
+1449178548 source:/home/nikita/Documents/SDL_test_1/sources/CApp.cpp
+	"../headers/CApp.h"
+
+1449178532 /home/nikita/Documents/SDL_test_1/headers/CApp.h
+	<ctime>
+	<unistd.h>
+	<iostream>
+	<SDL2/SDL.h>
+	<SDL2/SDL_ttf.h>
+	"CEvent.h"
+	"CSurface.h"
+	"CObjects.h"
+	"CMacros.h"
+	"CMusic.h"
+	"CMenu.h"
+	"CHighscores.h"
+	<vector>
+	<chrono>
+
+1449132202 /home/nikita/Documents/SDL_test_1/headers/CEvent.h
+	<SDL2/SDL.h>
+
+1449076473 /home/nikita/Documents/SDL_test_1/headers/CSurface.h
+	<SDL2/SDL.h>
+
+1448644036 /home/nikita/Documents/SDL_test_1/headers/CCharacters.h
+	<SDL2/SDL.h>
+
+1449190845 source:/home/nikita/Documents/SDL_test_1/sources/CApp_OnCleanup.cpp
+	"../headers/CApp.h"
+
+1449169863 source:/home/nikita/Documents/SDL_test_1/sources/CApp_OnEvent.cpp
+	"../headers/CApp.h"
+
+1449189987 source:/home/nikita/Documents/SDL_test_1/sources/CApp_OnInit.cpp
+	"../headers/CApp.h"
+
+1449183113 source:/home/nikita/Documents/SDL_test_1/sources/CApp_OnLoop.cpp
+	"../headers/CApp.h"
+
+1449185169 source:/home/nikita/Documents/SDL_test_1/sources/CApp_OnRender.cpp
+	"../headers/CApp.h"
+
+1448644168 source:/home/nikita/Documents/SDL_test_1/sources/CCharacters.cpp
+	"../headers/CCharacters.h"
+
+1448641715 source:/home/nikita/Documents/SDL_test_1/sources/CEvent.cpp
+	"../headers/CEvent.h"
+
+1449075276 source:/home/nikita/Documents/SDL_test_1/sources/CSurface.cpp
+	"../headers/CSurface.h"
+
+1448805157 source:/home/nikita/Documents/SDL_test_1/sources/CMacros.cpp
+	"../headers/CMacros.h"
+
+1448805189 /home/nikita/Documents/SDL_test_1/headers/CMacros.h
+	<unistd.h>
+	<windows.h>
+
+1449020837 /home/nikita/Documents/SDL_test_1/headers/CObjects.h
+	<SDL2/SDL.h>
+	<algorithm>
+
+1449150444 source:/home/nikita/Documents/SDL_test_1/sources/CObjects.cpp
+	"../headers/CObjects.h"
+
+1449136213 /home/nikita/Documents/SDL_test_1/headers/CMusic.h
+	<SDL2/SDL_mixer.h>
+	<algorithm>
+
+1449186544 source:/home/nikita/Documents/SDL_test_1/sources/CMusic.cpp
+	"../headers/CMusic.h"
+
+1449164615 source:/home/nikita/Documents/SDL_test_1/sources/CApp_OnMusic.cpp
+	"../headers/CApp.h"
+
+1449168669 /home/nikita/Documents/SDL_test_1/headers/CMenu.h
+	<SDL2/SDL.h>
+	<vector>
+
+1449190441 source:/home/nikita/Documents/SDL_test_1/sources/CMenu.cpp
+	"../headers/CMenu.h"
+
+1449190822 source:/home/nikita/Documents/SDL_test_1/sources/CHighscores.cpp
+	"../headers/CHighscores.h"
+	<iostream>
+	<cstring>
+	<cstdio>
+
+1449190778 /home/nikita/Documents/SDL_test_1/headers/CHighscores.h
+	<vector>
+	<unistd.h>
+	<fcntl.h>
+

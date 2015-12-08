@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6" />
+	<Project>
+		<Option title="SDL_test_1" />
+		<Option pch_mode="2" />
+		<Option compiler="gcc" />
+		<Option virtualFolders="sources/;headers/;sources/sources/;" />
+		<Build>
+			<Target title="Debug">
+				<Option output="bin/Debug/SDL_test_1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Debug/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-g" />
+				</Compiler>
+				<Linker>
+					<Add option="-lSDL2main -lSDL2_mixer -lSDL2_ttf -lSDL2" />
+				</Linker>
+			</Target>
+			<Target title="Release">
+				<Option output="bin/Release/SDL_test_1" prefix_auto="1" extension_auto="1" />
+				<Option object_output="obj/Release/" />
+				<Option type="1" />
+				<Option compiler="gcc" />
+				<Compiler>
+					<Add option="-O2" />
+				</Compiler>
+				<Linker>
+					<Add option="-s" />
+				</Linker>
+			</Target>
+		</Build>
+		<Compiler>
+			<Add option="-Wall" />
+		</Compiler>
+		<Linker>
+			<Add option="-lSDL2main -lSDL2" />
+		</Linker>
+		<Unit filename="headers/CApp.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="headers/CEvent.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="headers/CMacros.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="headers/CMenu.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="headers/CMusic.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="headers/CObjects.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="headers/CSurface.h">
+			<Option virtualFolder="headers/" />
+		</Unit>
+		<Unit filename="sources/CApp.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Unit filename="sources/CApp_OnCleanup.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Unit filename="sources/CApp_OnEvent.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Unit filename="sources/CApp_OnInit.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Unit filename="sources/CApp_OnLoop.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Unit filename="sources/CApp_OnMusic.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Unit filename="sources/CApp_OnRender.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Unit filename="sources/CEvent.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Unit filename="sources/CMacros.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Unit filename="sources/CMenu.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Unit filename="sources/CMusic.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Unit filename="sources/CObjects.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Unit filename="sources/CSurface.cpp">
+			<Option virtualFolder="sources/" />
+		</Unit>
+		<Extensions>
+			<code_completion />
+			<debugger />
+		</Extensions>
+	</Project>
+</CodeBlocks_project_file>

@@ -1,0 +1,1065 @@
+==10036== Memcheck, a memory error detector
+==10036== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+==10036== Using Valgrind-3.10.0.SVN and LibVEX; rerun with -h for copyright info
+==10036== Command: ./SDL_test_1
+==10036== Parent PID: 9490
+==10036== 
+--10036-- 
+--10036-- Valgrind options:
+--10036--    -v
+--10036--    --tool=memcheck
+--10036--    --leak-check=full
+--10036--    --num-callers=40
+--10036--    --log-file=valgrind.log
+--10036-- Contents of /proc/version:
+--10036--   Linux version 3.19.0-25-generic (buildd@lgw01-20) (gcc version 4.8.2 (Ubuntu 4.8.2-19ubuntu1) ) #26~14.04.1-Ubuntu SMP Fri Jul 24 21:16:20 UTC 2015
+--10036-- Arch and hwcaps: AMD64, amd64-cx16-rdtscp-sse3-avx
+--10036-- Page sizes: currently 4096, max supported 4096
+--10036-- Valgrind library directory: /usr/lib/valgrind
+--10036-- Reading syms from /home/nikita/Documents/SDL_test_1/bin/Debug/SDL_test_1
+--10036-- Reading syms from /lib/x86_64-linux-gnu/ld-2.19.so
+--10036--   Considering /lib/x86_64-linux-gnu/ld-2.19.so ..
+--10036--   .. CRC mismatch (computed 4cbae35e wanted 8d683c31)
+--10036--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.19.so ..
+--10036--   .. CRC is valid
+--10036-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--10036--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--10036--   .. CRC mismatch (computed 37cdde19 wanted adc367dd)
+--10036--    object doesn't have a symbol table
+--10036--    object doesn't have a dynamic symbol table
+--10036-- Scheduler: using generic scheduler lock implementation.
+--10036-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==10036== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-10036-by-nikita-on-???
+==10036== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-10036-by-nikita-on-???
+==10036== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-10036-by-nikita-on-???
+==10036== 
+==10036== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==10036== don't want to do, unless you know exactly what you're doing,
+==10036== or are doing some strange experiment):
+==10036==   /usr/lib/valgrind/../../bin/vgdb --pid=10036 ...command...
+==10036== 
+==10036== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==10036==   /path/to/gdb ./SDL_test_1
+==10036== and then give GDB the following command
+==10036==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=10036
+==10036== --pid is optional if only one valgrind process is running
+==10036== 
+--10036-- REDIR: 0x4019ca0 (strlen) redirected to 0x38068331 (???)
+--10036-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--10036--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--10036--   .. CRC mismatch (computed 329d6860 wanted c0186920)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--10036--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--10036--   .. CRC mismatch (computed 1fb85af8 wanted 2e9e3c16)
+--10036--    object doesn't have a symbol table
+==10036== WARNING: new redirection conflicts with existing -- ignoring it
+--10036--     old: 0x04019ca0 (strlen              ) R-> (0000.0) 0x38068331 ???
+--10036--     new: 0x04019ca0 (strlen              ) R-> (2007.0) 0x04c2e1a0 strlen
+--10036-- REDIR: 0x4019a50 (index) redirected to 0x4c2dd50 (index)
+--10036-- REDIR: 0x4019c70 (strcmp) redirected to 0x4c2f2f0 (strcmp)
+--10036-- REDIR: 0x401a9c0 (mempcpy) redirected to 0x4c31da0 (mempcpy)
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libSDL2_mixer-2.0.so.0.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libstdc++.so.6.0.19 ..
+--10036--   .. CRC mismatch (computed 0df13638 wanted 88e81a42)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libm-2.19.so
+--10036--   Considering /lib/x86_64-linux-gnu/libm-2.19.so ..
+--10036--   .. CRC mismatch (computed a46ef660 wanted 767bfa33)
+--10036--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libm-2.19.so ..
+--10036--   .. CRC is valid
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libgcc_s.so.1
+--10036--   Considering /lib/x86_64-linux-gnu/libgcc_s.so.1 ..
+--10036--   .. CRC mismatch (computed ea519b66 wanted 0c00ddb3)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libc-2.19.so
+--10036--   Considering /lib/x86_64-linux-gnu/libc-2.19.so ..
+--10036--   .. CRC mismatch (computed dc620abc wanted 148cbd6e)
+--10036--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.19.so ..
+--10036--   .. CRC is valid
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libasound.so.2.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libdl-2.19.so
+--10036--   Considering /lib/x86_64-linux-gnu/libdl-2.19.so ..
+--10036--   .. CRC mismatch (computed c1315e8c wanted 37097b60)
+--10036--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libdl-2.19.so ..
+--10036--   .. CRC is valid
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libpulse-simple.so.0.0.4
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libpulse-simple.so.0.0.4 ..
+--10036--   .. CRC mismatch (computed cf51114b wanted 2f006a7a)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libpulse.so.0.16.2
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libpulse.so.0.16.2 ..
+--10036--   .. CRC mismatch (computed 8c5b6861 wanted 04b35ed6)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0 ..
+--10036--   .. CRC mismatch (computed c168660b wanted 161bd255)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libXext.so.6.4.0 ..
+--10036--   .. CRC mismatch (computed 52bd6459 wanted a8305e86)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libXcursor.so.1.0.2 ..
+--10036--   .. CRC mismatch (computed 63e27661 wanted 89d60ca9)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libXinerama.so.1.0.0 ..
+--10036--   .. CRC mismatch (computed 7bb99cdf wanted 61ad4d32)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libXi.so.6.1.0 ..
+--10036--   .. CRC mismatch (computed 30ad0331 wanted 48347a70)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libXrandr.so.2.2.0 ..
+--10036--   .. CRC mismatch (computed 0be820e9 wanted c977080b)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libXss.so.1.0.0
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libXss.so.1.0.0 ..
+--10036--   .. CRC mismatch (computed ab522b10 wanted 5fc28128)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libXxf86vm.so.1.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libwayland-egl.so.1.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libwayland-client.so.0.2.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libwayland-cursor.so.0.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libxkbcommon.so.0.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libpthread-2.19.so
+--10036--   Considering /lib/x86_64-linux-gnu/libpthread-2.19.so ..
+--10036--   .. CRC mismatch (computed d568bf33 wanted fb00d679)
+--10036--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libpthread-2.19.so ..
+--10036--   .. CRC is valid
+--10036-- Reading syms from /lib/x86_64-linux-gnu/librt-2.19.so
+--10036--   Considering /lib/x86_64-linux-gnu/librt-2.19.so ..
+--10036--   .. CRC mismatch (computed aa86d720 wanted d04e3800)
+--10036--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/librt-2.19.so ..
+--10036--   .. CRC is valid
+--10036-- Reading syms from /usr/lib/libmodplug.so.1.0.0
+--10036--   Considering /usr/lib/libmodplug.so.1.0.0 ..
+--10036--   .. CRC mismatch (computed 79c28185 wanted 6d56ac1d)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libfluidsynth.so.1.5.2
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libvorbisfile.so.3.3.4
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libFLAC.so.8.3.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libmad.so.0.2.1
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libfreetype.so.6.11.1
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-4.0.so
+--10036--   Considering /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon-4.0.so ..
+--10036--   .. CRC mismatch (computed 95f70ea6 wanted ed782968)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libjson-c.so.2.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libdbus-1.so.3.7.6
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libxcb.so.1.1.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libXrender.so.1.3.0 ..
+--10036--   .. CRC mismatch (computed 4a8ba753 wanted 8fd14838)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libXfixes.so.3.1.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libffi.so.6.0.1
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libffi.so.6.0.1 ..
+--10036--   .. CRC mismatch (computed ffa3f758 wanted a40db115)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libglib-2.0.so.0.4002.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libjack.so.0.1.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libsndfile.so.1.0.25
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libsndfile.so.1.0.25 ..
+--10036--   .. CRC mismatch (computed 5e0fd126 wanted 972bbac5)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libreadline.so.6.3
+--10036--   Considering /lib/x86_64-linux-gnu/libreadline.so.6.3 ..
+--10036--   .. CRC mismatch (computed 763bcd4a wanted 8018b159)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libvorbis.so.0.4.5
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libogg.so.0.8.1
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libogg.so.0.8.1 ..
+--10036--   .. CRC mismatch (computed a72e821d wanted 16075ea5)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libz.so.1.2.8
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libpng12.so.0.50.0
+--10036--   Considering /lib/x86_64-linux-gnu/libpng12.so.0.50.0 ..
+--10036--   .. CRC mismatch (computed cea064ea wanted 43f34d3e)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libwrap.so.0.7.6
+--10036--   Considering /lib/x86_64-linux-gnu/libwrap.so.0.7.6 ..
+--10036--   .. CRC mismatch (computed 34dcf8ad wanted 45219146)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libasyncns.so.0.3.1
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libXau.so.6.0.0 ..
+--10036--   .. CRC mismatch (computed 256f5df8 wanted 5d40ac88)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libXdmcp.so.6.0.0 ..
+--10036--   .. CRC mismatch (computed 15fc4130 wanted a06cb5c7)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libpcre.so.3.13.1
+--10036--   Considering /lib/x86_64-linux-gnu/libpcre.so.3.13.1 ..
+--10036--   .. CRC mismatch (computed de394777 wanted 5a95ab6d)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libvorbisenc.so.2.0.8
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libtinfo.so.5.9
+--10036--   Considering /lib/x86_64-linux-gnu/libtinfo.so.5.9 ..
+--10036--   .. CRC mismatch (computed a766b3f6 wanted 5ffaddcc)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libnsl-2.19.so
+--10036--   Considering /lib/x86_64-linux-gnu/libnsl-2.19.so ..
+--10036--   .. CRC mismatch (computed ea6302f9 wanted daf19eb9)
+--10036--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libnsl-2.19.so ..
+--10036--   .. CRC is valid
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libresolv-2.19.so
+--10036--   Considering /lib/x86_64-linux-gnu/libresolv-2.19.so ..
+--10036--   .. CRC mismatch (computed e64430c6 wanted 28c4e8db)
+--10036--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libresolv-2.19.so ..
+--10036--   .. CRC is valid
+--10036-- REDIR: 0x5e3fd60 (strcasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e42050 (strncasecmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e3f530 (memcpy@GLIBC_2.2.5) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e3ef60 (bcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e44730 (memcpy@@GLIBC_2.14) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e3bee0 (strncmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e3a070 (strcmp) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e3d7c0 (rindex) redirected to 0x4c2da30 (rindex)
+--10036-- REDIR: 0x5e3bac0 (strlen) redirected to 0x4c2e0e0 (strlen)
+--10036-- REDIR: 0x5e3efa0 (__GI_memcmp) redirected to 0x4c30b80 (__GI_memcmp)
+--10036-- REDIR: 0x5ef3200 (__strcmp_ssse3) redirected to 0x4c2f1b0 (strcmp)
+--10036-- REDIR: 0x55f1d90 (operator new(unsigned long)) redirected to 0x4c2b070 (operator new(unsigned long))
+--10036-- REDIR: 0x5e3bf30 (__GI_strncmp) redirected to 0x4c2e930 (__GI_strncmp)
+--10036-- REDIR: 0x5ef01e0 (__strcasecmp_avx) redirected to 0x4c2ea80 (strcasecmp)
+--10036-- REDIR: 0x5e3dab0 (strpbrk) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5eeffa0 (__strpbrk_sse42) redirected to 0x4c32150 (strpbrk)
+--10036-- REDIR: 0x5e36220 (calloc) redirected to 0x4c2cbf0 (calloc)
+--10036-- REDIR: 0xffffffffff600400 (???) redirected to 0x3806831d (???)
+--10036-- REDIR: 0x5e35ef0 (realloc) redirected to 0x4c2ce10 (realloc)
+--10036-- REDIR: 0x5e35750 (malloc) redirected to 0x4c2ab10 (malloc)
+--10036-- REDIR: 0x5e3f5c0 (memset) redirected to 0x4c31350 (memset)
+--10036-- REDIR: 0x5e44780 (__GI_memcpy) redirected to 0x4c2fc90 (__GI_memcpy)
+--10036-- REDIR: 0xffffffffff600000 (???) redirected to 0x38068313 (???)
+--10036-- REDIR: 0x5e35df0 (free) redirected to 0x4c2bd80 (free)
+--10036-- REDIR: 0x5e4afd0 (__memcpy_sse2_unaligned) redirected to 0x4c2f6b0 (memcpy@@GLIBC_2.14)
+--10036-- REDIR: 0x5e46ac0 (strchrnul) redirected to 0x4c319b0 (strchrnul)
+--10036-- REDIR: 0x5ebbd00 (__strcpy_chk) redirected to 0x4c31a30 (__strcpy_chk)
+--10036-- REDIR: 0x5e3e410 (__GI_strstr) redirected to 0x4c32030 (__strstr_sse2)
+--10036-- REDIR: 0x5f13060 (__memcmp_sse4_1) redirected to 0x4c30c00 (__memcmp_sse4_1)
+--10036-- REDIR: 0x5ef4460 (__strncmp_ssse3) redirected to 0x4c2e8c0 (strncmp)
+--10036-- REDIR: 0x5f03090 (__memmove_ssse3_back) redirected to 0x4c2f450 (memcpy@GLIBC_2.2.5)
+--10036-- REDIR: 0x5e3d780 (strncpy) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e501c0 (__strncpy_sse2_unaligned) redirected to 0x4c2e770 (__strncpy_sse2_unaligned)
+--10036-- REDIR: 0x5e3e9d0 (strstr) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e54230 (__strstr_sse2_unaligned) redirected to 0x4c31fa0 (strstr)
+--10036-- REDIR: 0x5e3b500 (strcpy) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e4fb90 (__strcpy_sse2_unaligned) redirected to 0x4c2e1c0 (strcpy)
+--10036-- REDIR: 0x5e39e20 (index) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e39e50 (__GI_strchr) redirected to 0x4c2db90 (__GI_strchr)
+--10036-- REDIR: 0x5e3ec10 (memchr) redirected to 0x4c2f390 (memchr)
+--10036-- REDIR: 0x5e3fbb0 (stpcpy) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e511a0 (__stpcpy_sse2_unaligned) redirected to 0x4c30f60 (__stpcpy_sse2_unaligned)
+--10036-- REDIR: 0x5deeec0 (unsetenv) redirected to 0x4c325c0 (unsetenv)
+--10036-- REDIR: 0x5e4ac20 (__GI_strncpy) redirected to 0x4c2e4d0 (__GI_strncpy)
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/mesa/libGL.so.1.2.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libexpat.so.1.6.0
+--10036--   Considering /lib/x86_64-linux-gnu/libexpat.so.1.6.0 ..
+--10036--   .. CRC mismatch (computed db0eea18 wanted 0ac9b506)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libglapi.so.0.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libXdamage.so.1.1.0 ..
+--10036--   .. CRC mismatch (computed fe4e32c0 wanted 2a5b3a13)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0
+--10036--   Considering /usr/lib/x86_64-linux-gnu/libX11-xcb.so.1.0.0 ..
+--10036--   .. CRC mismatch (computed e2f4c069 wanted 2164c257)
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libxcb-glx.so.0.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libxcb-dri2.so.0.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libxcb-dri3.so.0.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libxcb-present.so.0.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libxcb-sync.so.1.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libxshmfence.so.1.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libdrm.so.2.4.0
+--10036--    object doesn't have a symbol table
+--10036-- REDIR: 0x5ebba60 (__memcpy_chk) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e3de40 (strspn) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e3f6c0 (mempcpy) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5f005c0 (__mempcpy_ssse3_back) redirected to 0x4c31ad0 (mempcpy)
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libudev.so.1.3.5
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libcgmanager.so.0.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libnih.so.1.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /lib/x86_64-linux-gnu/libnih-dbus.so.1.0.0
+--10036--    object doesn't have a symbol table
+--10036-- REDIR: 0x5e3bea0 (strncat) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5e468b0 (rawmemchr) redirected to 0x4c319f0 (rawmemchr)
+--10036-- REDIR: 0x5e3bc80 (strnlen) redirected to 0x4c2e080 (strnlen)
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/dri/i965_dri.so
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libdrm_intel.so.1.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libdrm_nouveau.so.2.0.0
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libdrm_radeon.so.1.0.1
+--10036--    object doesn't have a symbol table
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libpciaccess.so.0.11.1
+--10036--    object doesn't have a symbol table
+--10036-- REDIR: 0x5e39c20 (strcat) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5ef00c0 (__strspn_sse42) redirected to 0x4c32220 (strspn)
+--10036-- REDIR: 0x5e378a0 (posix_memalign) redirected to 0x4c2d1f0 (posix_memalign)
+--10036-- REDIR: 0x5e3fbf0 (__GI_stpcpy) redirected to 0x4c30da0 (__GI_stpcpy)
+--10036-- Reading syms from /usr/lib/x86_64-linux-gnu/libtxc_dxtn_s2tc.so.0.0.0
+--10036--    object doesn't have a symbol table
+--10036-- REDIR: 0x5e529b0 (__strcat_sse2_unaligned) redirected to 0x4c2dd90 (strcat)
+--10036-- REDIR: 0x5e3a0b0 (__GI_strcmp) redirected to 0x4c2f200 (__GI_strcmp)
+--10036-- REDIR: 0x5e3f3a0 (__GI_memmove) redirected to 0x4c31660 (__GI_memmove)
+--10036-- REDIR: 0x5e3b620 (strcspn) redirected to 0x4a25720 (_vgnU_ifunc_wrapper)
+--10036-- REDIR: 0x5eefe60 (__strcspn_sse42) redirected to 0x4c321b0 (strcspn)
+--10036-- REDIR: 0x5efdae0 (__memcpy_chk_ssse3_back) redirected to 0x4c31e90 (__memcpy_chk)
+--10036-- REDIR: 0x55f00f0 (operator delete(void*)) redirected to 0x4c2c250 (operator delete(void*))
+--10036-- REDIR: 0x55f1ea0 (operator new[](unsigned long)) redirected to 0x4c2b790 (operator new[](unsigned long))
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40BE01: CHighscores::Add_Score(char*, int) (CHighscores.cpp:98)
+==10036==    by 0x406DC0: CApp::OnLoop() (CApp_OnLoop.cpp:83)
+==10036==    by 0x4025C7: CApp::OnExecute() (CApp.cpp:87)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12ac1f30 is 0 bytes inside a block of size 20 alloc'd
+==10036==    at 0x4C2B800: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40B9FD: CHighscores::Load_from_File() (CHighscores.cpp:54)
+==10036==    by 0x4056D2: CApp::Init_Menu() (CApp_OnInit.cpp:118)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40CE9A: CButton::~CButton() (CMenu.cpp:48)
+==10036==    by 0x40CED5: CButton::~CButton() (CMenu.cpp:49)
+==10036==    by 0x40D22E: CMenu::~CMenu() (CMenu.cpp:101)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403F58: CApp::OnCleanup() (CApp_OnCleanup.cpp:25)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12aa8c10 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x404F16: CApp::Init_Menu() (CApp_OnInit.cpp:61)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40CD5A: CText::~CText() (CMenu.cpp:16)
+==10036==    by 0x40CEA6: CButton::~CButton() (CMenu.cpp:46)
+==10036==    by 0x40CED5: CButton::~CButton() (CMenu.cpp:49)
+==10036==    by 0x40D22E: CMenu::~CMenu() (CMenu.cpp:101)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403F58: CApp::OnCleanup() (CApp_OnCleanup.cpp:25)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12aa6eb0 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x404EF0: CApp::Init_Menu() (CApp_OnInit.cpp:60)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40CD5A: CText::~CText() (CMenu.cpp:16)
+==10036==    by 0x40CD89: CText::~CText() (CMenu.cpp:17)
+==10036==    by 0x40D2FA: CMenu::~CMenu() (CMenu.cpp:109)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403F8D: CApp::OnCleanup() (CApp_OnCleanup.cpp:26)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12e52ae0 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x40553A: CApp::Init_Menu() (CApp_OnInit.cpp:101)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40D042: CCheck_Button::~CCheck_Button() (CMenu.cpp:77)
+==10036==    by 0x40D08D: CCheck_Button::~CCheck_Button() (CMenu.cpp:79)
+==10036==    by 0x40D294: CMenu::~CMenu() (CMenu.cpp:105)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403FC2: CApp::OnCleanup() (CApp_OnCleanup.cpp:27)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12e4b370 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4052A2: CApp::Init_Menu() (CApp_OnInit.cpp:84)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40D052: CCheck_Button::~CCheck_Button() (CMenu.cpp:78)
+==10036==    by 0x40D08D: CCheck_Button::~CCheck_Button() (CMenu.cpp:79)
+==10036==    by 0x40D294: CMenu::~CMenu() (CMenu.cpp:105)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403FC2: CApp::OnCleanup() (CApp_OnCleanup.cpp:27)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12ab9910 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4052EE: CApp::Init_Menu() (CApp_OnInit.cpp:86)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40CE9A: CButton::~CButton() (CMenu.cpp:48)
+==10036==    by 0x40D05E: CCheck_Button::~CCheck_Button() (CMenu.cpp:75)
+==10036==    by 0x40D08D: CCheck_Button::~CCheck_Button() (CMenu.cpp:79)
+==10036==    by 0x40D294: CMenu::~CMenu() (CMenu.cpp:105)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403FC2: CApp::OnCleanup() (CApp_OnCleanup.cpp:27)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12aba1a0 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x405314: CApp::Init_Menu() (CApp_OnInit.cpp:87)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40CD5A: CText::~CText() (CMenu.cpp:16)
+==10036==    by 0x40CEA6: CButton::~CButton() (CMenu.cpp:46)
+==10036==    by 0x40D05E: CCheck_Button::~CCheck_Button() (CMenu.cpp:75)
+==10036==    by 0x40D08D: CCheck_Button::~CCheck_Button() (CMenu.cpp:79)
+==10036==    by 0x40D294: CMenu::~CMenu() (CMenu.cpp:105)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403FC2: CApp::OnCleanup() (CApp_OnCleanup.cpp:27)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12e4c050 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4052C8: CApp::Init_Menu() (CApp_OnInit.cpp:85)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+--10036-- REDIR: 0x55f0120 (operator delete[](void*)) redirected to 0x4c2c7d0 (operator delete[](void*))
+==10036== 
+==10036== HEAP SUMMARY:
+==10036==     in use at exit: 7,212,533 bytes in 11,878 blocks
+==10036==   total heap usage: 68,554 allocs, 56,676 frees, 74,344,954 bytes allocated
+==10036== 
+==10036== Searching for pointers to 11,878 not-freed blocks
+==10036== Checked 2,039,504 bytes
+==10036== 
+==10036== 22 bytes in 2 blocks are definitely lost in loss record 12 of 321
+==10036==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x5E3B839: strdup (strdup.c:42)
+==10036==    by 0x6B1EE56: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==10036==    by 0x6B1FC64: _XimSetICValueData (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==10036==    by 0x6B1B259: _XimLocalCreateIC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==10036==    by 0x6B01884: XCreateIC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==10036==    by 0x4EF0D62: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EF1187: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EE467F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EE448F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4E4F4FE: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x404BDC: CApp::OnInit() (CApp_OnInit.cpp:6)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 22 bytes in 2 blocks are definitely lost in loss record 13 of 321
+==10036==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x5E3B839: strdup (strdup.c:42)
+==10036==    by 0x6B1EE56: ??? (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==10036==    by 0x6B1FC64: _XimSetICValueData (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==10036==    by 0x6B1B259: _XimLocalCreateIC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==10036==    by 0x6B01884: XCreateIC (in /usr/lib/x86_64-linux-gnu/libX11.so.6.3.0)
+==10036==    by 0x4EF0D62: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EF1187: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EE467F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x404C29: CApp::OnInit() (CApp_OnInit.cpp:17)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 128 bytes in 1 blocks are definitely lost in loss record 152 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4051AA: CApp::Init_Menu() (CApp_OnInit.cpp:77)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 1,104 (56 direct, 1,048 indirect) bytes in 1 blocks are definitely lost in loss record 212 of 321
+==10036==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDB939: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF232: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4051AA: CApp::Init_Menu() (CApp_OnInit.cpp:77)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 1,680 bytes in 1 blocks are definitely lost in loss record 223 of 321
+==10036==    at 0x4C2AB80: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF31B: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4051AA: CApp::Init_Menu() (CApp_OnInit.cpp:77)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 3,936 (128 direct, 3,808 indirect) bytes in 1 blocks are definitely lost in loss record 248 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x405184: CApp::Init_Menu() (CApp_OnInit.cpp:76)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 3,936 (128 direct, 3,808 indirect) bytes in 1 blocks are definitely lost in loss record 249 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x405213: CApp::Init_Menu() (CApp_OnInit.cpp:80)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 3,936 (128 direct, 3,808 indirect) bytes in 1 blocks are definitely lost in loss record 250 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x405239: CApp::Init_Menu() (CApp_OnInit.cpp:81)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 4,116 (128 direct, 3,988 indirect) bytes in 1 blocks are definitely lost in loss record 252 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4052A2: CApp::Init_Menu() (CApp_OnInit.cpp:84)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 4,116 (128 direct, 3,988 indirect) bytes in 1 blocks are definitely lost in loss record 253 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4052EE: CApp::Init_Menu() (CApp_OnInit.cpp:86)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 4,116 (128 direct, 3,988 indirect) bytes in 1 blocks are definitely lost in loss record 254 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x40538C: CApp::Init_Menu() (CApp_OnInit.cpp:90)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 4,116 (128 direct, 3,988 indirect) bytes in 1 blocks are definitely lost in loss record 255 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4053D8: CApp::Init_Menu() (CApp_OnInit.cpp:92)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 4,188 (128 direct, 4,060 indirect) bytes in 1 blocks are definitely lost in loss record 261 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x40559C: CApp::Init_Menu() (CApp_OnInit.cpp:103)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 4,356 (128 direct, 4,228 indirect) bytes in 1 blocks are definitely lost in loss record 262 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x40553A: CApp::Init_Menu() (CApp_OnInit.cpp:101)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 4,776 (128 direct, 4,648 indirect) bytes in 1 blocks are definitely lost in loss record 267 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4055FE: CApp::Init_Menu() (CApp_OnInit.cpp:105)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 5,108 (128 direct, 4,980 indirect) bytes in 1 blocks are definitely lost in loss record 268 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4052C8: CApp::Init_Menu() (CApp_OnInit.cpp:85)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 5,108 (128 direct, 4,980 indirect) bytes in 1 blocks are definitely lost in loss record 269 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x405314: CApp::Init_Menu() (CApp_OnInit.cpp:87)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 5,108 (128 direct, 4,980 indirect) bytes in 1 blocks are definitely lost in loss record 270 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4053B2: CApp::Init_Menu() (CApp_OnInit.cpp:91)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 5,108 (128 direct, 4,980 indirect) bytes in 1 blocks are definitely lost in loss record 271 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4053FE: CApp::Init_Menu() (CApp_OnInit.cpp:93)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 5,604 (128 direct, 5,476 indirect) bytes in 1 blocks are definitely lost in loss record 273 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4050DF: CApp::Init_Menu() (CApp_OnInit.cpp:72)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 5,604 (128 direct, 5,476 indirect) bytes in 1 blocks are definitely lost in loss record 274 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x405105: CApp::Init_Menu() (CApp_OnInit.cpp:73)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 6,968 (128 direct, 6,840 indirect) bytes in 1 blocks are definitely lost in loss record 278 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x404EF0: CApp::Init_Menu() (CApp_OnInit.cpp:60)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 6,968 (128 direct, 6,840 indirect) bytes in 1 blocks are definitely lost in loss record 279 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x404F16: CApp::Init_Menu() (CApp_OnInit.cpp:61)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 6,968 (128 direct, 6,840 indirect) bytes in 1 blocks are definitely lost in loss record 280 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x40549C: CApp::Init_Menu() (CApp_OnInit.cpp:97)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 7,836 (128 direct, 7,708 indirect) bytes in 1 blocks are definitely lost in loss record 283 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x405476: CApp::Init_Menu() (CApp_OnInit.cpp:96)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 9,324 (128 direct, 9,196 indirect) bytes in 1 blocks are definitely lost in loss record 291 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x405060: CApp::Init_Menu() (CApp_OnInit.cpp:69)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 11,184 (128 direct, 11,056 indirect) bytes in 1 blocks are definitely lost in loss record 292 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x404F95: CApp::Init_Menu() (CApp_OnInit.cpp:64)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 11,184 (128 direct, 11,056 indirect) bytes in 1 blocks are definitely lost in loss record 293 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x404FBB: CApp::Init_Menu() (CApp_OnInit.cpp:65)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 11,648 (128 direct, 11,520 indirect) bytes in 1 blocks are definitely lost in loss record 294 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDC162: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x4EDF27D: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x40503A: CApp::Init_Menu() (CApp_OnInit.cpp:68)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 322,140 (11,232 direct, 310,908 indirect) bytes in 117 blocks are definitely lost in loss record 313 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x40A552: CApp::OnRender() (CApp_OnRender.cpp:15)
+==10036==    by 0x40262F: CApp::OnExecute() (CApp.cpp:92)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 402,948 (11,232 direct, 391,716 indirect) bytes in 117 blocks are definitely lost in loss record 315 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x40A5B1: CApp::OnRender() (CApp_OnRender.cpp:16)
+==10036==    by 0x40262F: CApp::OnExecute() (CApp.cpp:92)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 461,580 (11,232 direct, 450,348 indirect) bytes in 117 blocks are definitely lost in loss record 316 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x40A629: CApp::OnRender() (CApp_OnRender.cpp:18)
+==10036==    by 0x40262F: CApp::OnExecute() (CApp.cpp:92)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 552,804 (6,336 direct, 546,468 indirect) bytes in 66 blocks are definitely lost in loss record 317 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x40AC50: CApp::OnRender() (CApp_OnRender.cpp:49)
+==10036==    by 0x40262F: CApp::OnExecute() (CApp.cpp:92)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 5,229,000 (112,800 direct, 5,116,200 indirect) bytes in 1,175 blocks are definitely lost in loss record 321 of 321
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x40A73A: CApp::OnRender() (CApp_OnRender.cpp:24)
+==10036==    by 0x40262F: CApp::OnExecute() (CApp.cpp:92)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== LEAK SUMMARY:
+==10036==    definitely lost: 157,812 bytes in 1,623 blocks
+==10036==    indirectly lost: 6,958,928 bytes in 9,676 blocks
+==10036==      possibly lost: 0 bytes in 0 blocks
+==10036==    still reachable: 95,793 bytes in 579 blocks
+==10036==         suppressed: 0 bytes in 0 blocks
+==10036== Reachable blocks (those to which a pointer was found) are not shown.
+==10036== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+==10036== 
+==10036== ERROR SUMMARY: 60 errors from 42 contexts (suppressed: 6 from 1)
+==10036== 
+==10036== 1 errors in context 1 of 42:
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40BE01: CHighscores::Add_Score(char*, int) (CHighscores.cpp:98)
+==10036==    by 0x406DC0: CApp::OnLoop() (CApp_OnLoop.cpp:83)
+==10036==    by 0x4025C7: CApp::OnExecute() (CApp.cpp:87)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12ac1f30 is 0 bytes inside a block of size 20 alloc'd
+==10036==    at 0x4C2B800: operator new[](unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40B9FD: CHighscores::Load_from_File() (CHighscores.cpp:54)
+==10036==    by 0x4056D2: CApp::Init_Menu() (CApp_OnInit.cpp:118)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 
+==10036== 2 errors in context 2 of 42:
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40CD5A: CText::~CText() (CMenu.cpp:16)
+==10036==    by 0x40CEA6: CButton::~CButton() (CMenu.cpp:46)
+==10036==    by 0x40D05E: CCheck_Button::~CCheck_Button() (CMenu.cpp:75)
+==10036==    by 0x40D08D: CCheck_Button::~CCheck_Button() (CMenu.cpp:79)
+==10036==    by 0x40D294: CMenu::~CMenu() (CMenu.cpp:105)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403FC2: CApp::OnCleanup() (CApp_OnCleanup.cpp:27)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12e4c050 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4052C8: CApp::Init_Menu() (CApp_OnInit.cpp:85)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 
+==10036== 2 errors in context 3 of 42:
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40CE9A: CButton::~CButton() (CMenu.cpp:48)
+==10036==    by 0x40D05E: CCheck_Button::~CCheck_Button() (CMenu.cpp:75)
+==10036==    by 0x40D08D: CCheck_Button::~CCheck_Button() (CMenu.cpp:79)
+==10036==    by 0x40D294: CMenu::~CMenu() (CMenu.cpp:105)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403FC2: CApp::OnCleanup() (CApp_OnCleanup.cpp:27)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12aba1a0 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x405314: CApp::Init_Menu() (CApp_OnInit.cpp:87)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 
+==10036== 2 errors in context 4 of 42:
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40D052: CCheck_Button::~CCheck_Button() (CMenu.cpp:78)
+==10036==    by 0x40D08D: CCheck_Button::~CCheck_Button() (CMenu.cpp:79)
+==10036==    by 0x40D294: CMenu::~CMenu() (CMenu.cpp:105)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403FC2: CApp::OnCleanup() (CApp_OnCleanup.cpp:27)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12ab9910 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4052EE: CApp::Init_Menu() (CApp_OnInit.cpp:86)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 
+==10036== 2 errors in context 5 of 42:
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40D042: CCheck_Button::~CCheck_Button() (CMenu.cpp:77)
+==10036==    by 0x40D08D: CCheck_Button::~CCheck_Button() (CMenu.cpp:79)
+==10036==    by 0x40D294: CMenu::~CMenu() (CMenu.cpp:105)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403FC2: CApp::OnCleanup() (CApp_OnCleanup.cpp:27)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12e4b370 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x4052A2: CApp::Init_Menu() (CApp_OnInit.cpp:84)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 
+==10036== 5 errors in context 6 of 42:
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40CD5A: CText::~CText() (CMenu.cpp:16)
+==10036==    by 0x40CD89: CText::~CText() (CMenu.cpp:17)
+==10036==    by 0x40D2FA: CMenu::~CMenu() (CMenu.cpp:109)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403F8D: CApp::OnCleanup() (CApp_OnCleanup.cpp:26)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12e52ae0 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x40553A: CApp::Init_Menu() (CApp_OnInit.cpp:101)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 
+==10036== 6 errors in context 7 of 42:
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40CD5A: CText::~CText() (CMenu.cpp:16)
+==10036==    by 0x40CEA6: CButton::~CButton() (CMenu.cpp:46)
+==10036==    by 0x40CED5: CButton::~CButton() (CMenu.cpp:49)
+==10036==    by 0x40D22E: CMenu::~CMenu() (CMenu.cpp:101)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403F58: CApp::OnCleanup() (CApp_OnCleanup.cpp:25)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12aa6eb0 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x404EF0: CApp::Init_Menu() (CApp_OnInit.cpp:60)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+==10036== 
+==10036== 6 errors in context 8 of 42:
+==10036== Mismatched free() / delete / delete []
+==10036==    at 0x4C2C2BC: operator delete(void*) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x40CE9A: CButton::~CButton() (CMenu.cpp:48)
+==10036==    by 0x40CED5: CButton::~CButton() (CMenu.cpp:49)
+==10036==    by 0x40D22E: CMenu::~CMenu() (CMenu.cpp:101)
+==10036==    by 0x40D387: CMenu::~CMenu() (CMenu.cpp:112)
+==10036==    by 0x403F58: CApp::OnCleanup() (CApp_OnCleanup.cpp:25)
+==10036==    by 0x4026DD: CApp::OnExecute() (CApp.cpp:98)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036==  Address 0x12aa8c10 is 0 bytes inside a block of size 96 alloc'd
+==10036==    at 0x4C2CC70: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==10036==    by 0x4EDF21F: ??? (in /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0.2.0)
+==10036==    by 0x538E6F7: TTF_RenderUTF8_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x538EABD: TTF_RenderText_Solid (in /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0.10.2)
+==10036==    by 0x404F16: CApp::Init_Menu() (CApp_OnInit.cpp:61)
+==10036==    by 0x404CC8: CApp::OnInit() (CApp_OnInit.cpp:26)
+==10036==    by 0x40249C: CApp::OnExecute() (CApp.cpp:64)
+==10036==    by 0x402737: main (CApp.cpp:106)
+==10036== 
+--10036-- 
+--10036-- used_suppression:      6 X on SUSE11 writev uninit padding /usr/lib/valgrind/default.supp:397
+==10036== 
+==10036== ERROR SUMMARY: 60 errors from 42 contexts (suppressed: 6 from 1)
