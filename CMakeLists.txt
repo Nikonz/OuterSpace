@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.0)
 
-project(OpenSpace)
+project(OuterSpace)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${PROJECT_SOURCE_DIR}/sources/cmake")
 
@@ -28,9 +28,9 @@ set(SOURCES
   sources/CObjects.cpp
   sources/CSurface.cpp)
 
-add_executable(openspace ${SOURCES})
+add_executable(outerspace ${SOURCES})
 
-target_link_libraries(openspace
+target_link_libraries(outerspace
   ${SDL2_LIBRARY}
   ${SDL2_TTF_LIBRARIES}
   ${SDLMIXER_LIBRARY})
