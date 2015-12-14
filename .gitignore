@@ -1,0 +1,9 @@
+# Codeblocks build dirs
+bin/
+obj/
+
+# Game data
+data/highscores
+
+# My building dir
+build/
